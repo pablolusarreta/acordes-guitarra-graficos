@@ -1,0 +1,391 @@
+@font-face {
+    font-family: 'segoeui';
+    src: url('fuentes/segoeui.woff')
+}
+
+body {
+    font-family: segoeui, Arial, Helvetica, sans-serif;
+    color: #333;
+    margin: 0px;
+    padding: 0px;
+    cursor: default;
+    background-color: transparent;
+    user-select: none;
+    overflow: hidden;
+}
+
+div,
+td,
+th,
+input {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+select {
+    border-color: #fff;
+    transition: border-color 0.5S;
+}
+
+select:hover {
+    border-color: #000;
+}
+
+button {
+    font-family: segoeui, Arial, Helvetica, sans-serif;
+    background-color: #999;
+    font-size: 16px;
+    color: #fff;
+    padding: 4px 30px;
+    border: none;
+    opacity: .8;
+    transition: opacity 0.5s;
+}
+
+button:hover {
+    opacity: 1;
+}
+
+body>input {
+    position: absolute;
+    font-family: segoeui, Arial, Helvetica, sans-serif;
+    font-size: 46px;
+    font-weight: 100;
+    left: 10vw;
+    width: 80vw;
+    background-color: #fff;
+    text-align: center;
+}
+
+div>table {
+    border-collapse: collapse;
+    font-size: 11px;
+}
+
+div>table>caption {
+    padding-bottom: 10px;
+    text-align: right;
+}
+
+div>table>caption>div {
+    float: right;
+    text-align: center;
+    margin-left: 10px;
+    color: #ccc;
+    font-weight: bold;
+    font-size: 28px;
+    transform: rotate(45deg);
+    transition: color 0.5s;
+}
+
+div>table>caption>div:hover {
+    color: #f33;
+}
+
+div>table>caption>input {
+    font-family: segoeui, Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    width: 140px;
+    text-align: center;
+}
+
+div>table>tbody>tr>th {
+    font-weight: normal;
+    height: 30px;
+    border-bottom: 4px solid #000;
+}
+
+div>table>tbody>tr>td {
+    text-align: center;
+    width: 30px;
+    height: 24px;
+    background-image: url('img/linea_vertical.png');
+    background-repeat: repeat-y;
+    background-position: center;
+    border-bottom: 8px solid rgba(0, 0, 0, 0.1);
+    /*outline: .5px solid #f00;*/
+}
+
+div>table>tbody>tr>td:nth-child(1) {
+    background: none;
+    border: none;
+}
+
+div>table>tbody>tr>td:nth-child(2) {
+    border-left: 2px solid #ccc;
+}
+
+div>table>tbody>tr>td:nth-child(7) {
+    border-right: 2px solid #ccc;
+}
+
+div>table>tbody>tr>td>div,
+div>table>tbody>tr>th>div {
+    margin: auto;
+    width: 17px;
+    line-height: 17px;
+    background-color: #333;
+    border-radius: 12px 12px;
+}
+
+div>table>tbody>tr>td:nth-child(1)>div {
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #000;
+}
+
+div>table>tbody>tr>th>div {
+    background-color: #fff;
+    border: 2px solid #333;
+}
+
+div>table>tbody>tr>td>span {
+    margin-left: -100px;
+}
+
+#mastiles {
+    position: fixed;
+    top: 10vh;
+    height: 90vh;
+    width: 93vw;
+    overflow-y: auto;
+}
+
+#mastiles>div {
+    display: inline-block;
+    margin: 10px 24px 50px 24px;
+    margin-bottom: 40px;
+    vertical-align: text-top;
+    /*border: 2px solid #ccc;*/
+}
+
+#menu {
+    position: fixed;
+    margin: 0;
+    top: 0px;
+    right: 0px;
+    width: 7vw;
+    height: 100%;
+    background-color: #999;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0px 0px 20px #666;
+}
+
+#mas,
+#indice,
+#info,
+#impres,
+#conf,
+#dev {
+    position: relative;
+    text-align: center;
+    margin: 40px auto;
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 25px 25px;
+    filter:invert(100%);
+    transition: background-color 0.5s;
+}
+
+#mas {
+    background-image: url("img/mas.png");
+}
+#indice {
+    background-image: url("img/lista.png");
+}
+#conf {
+    background-image: url("img/disquete.png");
+}
+#impres {
+    background-image: url("img/impresora.png");
+}
+#info {
+    background-image: url("img/interrogacion.png");
+}
+
+#mas:hover,
+#indice:hover,
+#info:hover,
+#impres:hover,
+#conf:hover {
+    background-color: #777;
+}
+
+
+div.A0 {
+    border-width: 0px;
+    border-color: #000;
+}
+
+div.A1 {
+    border-width: 2px;
+    border-color: #000;
+}
+
+div.A2 {
+    border-width: 4px;
+    border-color: #000;
+}
+
+div.A3 {
+    border-width: 4px;
+    border-color: #099;
+}
+
+div.T0 {
+    display: none;
+}
+
+div.T1 {
+    background-color: #666;
+    color: #ccc;
+}
+
+div.T2 {
+    background-color: #000;
+    color: #999;
+}
+
+div.T3 {
+    background-color: #099;
+    color: #6ff;
+}
+
+#fondo_listado {
+    display: none;
+    margin: 0;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(-90deg, #fff, #ccc);
+}
+
+#fondo_listado>div:nth-child(1) {
+    position: absolute;
+    margin-left: 20%;
+    color: #999;
+    font-weight: 100;
+    font-size: 30px;
+}
+
+#listado {
+    margin: 10% auto;
+    width: 70%;
+    height: 70%;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 10px 10px 60px #ccc;
+}
+
+#listado>div {
+    margin: 10px;
+    padding: 5px;
+    background-color: #eee;
+    transition: background-color 0.5s;
+}
+
+#listado>div:hover {
+    background-color: #ddd;
+}
+
+#listado>div>span:nth-child(1) {
+    padding-right: 100px;
+}
+
+#listado>div>span:nth-child(2) {
+    font-weight: bold;
+    width: 300px;
+}
+
+#listado>div>div:nth-child(3),
+#ficheros>div {
+    float: right;
+    text-align: center;
+    margin: -10px 4px 0 0;
+    color: #999;
+    font-weight: bold;
+    font-size: 28px;
+    transform: rotate(45deg);
+    transition: color 0.5s;
+}
+
+#ficheros>div {
+    position: absolute;
+    top: -4px;
+    right: 0px;
+    font-size: 50px;
+}
+
+#ficheros>div:hover {
+    color: #333;
+}
+
+#listado>div>div:nth-child(4) {
+    float: right;
+    margin: 0 40px 0 0;
+    font-size: 10px;
+}
+
+#listado>div>div:nth-child(5) {
+    float: right;
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    color: #fff;
+    text-align: center;
+    margin: 0 40px 0 0;
+    font-size: 14px;
+    transition: background-color 0.5s;
+}
+
+#listado>div>div:nth-child(5):hover {
+    background-color: #999;
+}
+
+#listado>div>div:nth-child(3):hover {
+    color: #f33;
+}
+
+#cortina {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#ficheros {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    left: 5vw;
+    width: 90vw;
+    height: 160px;
+    top: calc(50vh - 100px);
+    background-color: #fff;
+}
+
+#ficheros>button {
+    width: 200px;
+    margin-top: 60px;
+    height: 40px;
+}
+
+#ficheros>button:nth-child(1) {
+    background-color: #600;
+}
+
+#ficheros>button:nth-child(2), #ficheros>button:nth-child(3), #ficheros>button:nth-child(4) {
+    background-color: #393;
+}

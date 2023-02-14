@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Acordes graficos de Guitarra</title>
+
+    <script type="text/javascript" src="index.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="indexSC.css" media="screen,print" />
+    <link rel="stylesheet" type="text/css" href="indexPR.css" media="print" />
+</head>
+
+<body>
+
+    <div id="mastiles"></div>
+
+    <input id="titulo_documento" type="text" value="" placeholder="Titulo descriptivo"
+        onchange="guarda_titulo(this.value)" />
+
+    <div id="fondo_listado">
+        <div>acordes y escalas</div>
+        <div id="listado"></div>
+    </div>
+
+    <div id="menu">
+        <div id="mas"></div>
+        <div id="indice" onclick="inicio()" title="Listado de documentos"></div>
+        <div id="conf" title="Guardar o cargar proyectos" onclick="edita();"></div>
+        <div id="impres" title="Imprimir"></div>        
+        <div id="info" title="Información de la aplicación"></div>
+        <div id="dev" ondblclick="ipcRenderer.send('dev', 1)"></div>
+
+    </div>
+
+    <div id="cortina">
+        <div id="ficheros">
+            <button onclick="cargaJson(0);" title="REMPLAZA TODA LA DB">ACTUALIZA Todo</button>
+            <button onclick="guardaJson(0);" title="GUARDA TODOS LOS TEMAS">Guarda Todo</button>
+            <button onclick="cargaJson(1);" title="AÑADE UN NUEVO TEMA">Añade Tema</button>
+            <button id="boton_guarda_tema" onclick="guardaJson(1);" title="GUARDA TEMA ACTUAL">Guarda Tema</button>
+            <div onclick="this.parentNode.parentNode.style.display='none'">+</div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

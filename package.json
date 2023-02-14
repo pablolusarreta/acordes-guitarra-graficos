@@ -1,0 +1,28 @@
+{
+    "name": "graficos-acordes-guitarra",
+    "productName": "acordes-guitarra",
+    "version": "2.0.0",
+    "description": "Creador de graficos para acordes de guitarra",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron main.js",
+        "dist": "electron-builder"
+    },
+    "author": "Pablo Lusarreta",
+    "license": "MIT",
+    "build": {
+        "appId": "GAG2020",
+        "asar": true,
+        "win": {
+            "target": "NSIS",
+            "icon": "assets/icons/win/icon.ico"
+        }
+    },
+    "dependencies": {
+        "electron-reload": "^1.5.0"
+    },
+    "devDependencies": {
+        "electron": "^6.1.12",
+        "electron-builder": "^23.6.0"
+    }
+}

@@ -1,0 +1,38 @@
+@page {
+    size: landscape;
+}
+
+body {
+    border-color: #f00;
+    size: landscape;
+}
+
+input,
+select {
+    border: 0;
+}
+
+body>span,
+div>table>caption>span,
+div>table>caption>div,
+#listado>div>div:nth-child(3),
+#menu,
+#fondo_listado,
+#codigo_tema,
+#cortina {
+    display: none;
+}
+
+div>table>tbody>tr>td {
+    width: 26px;
+    -webkit-print-color-adjust:exact;
+}
+
+#listado {
+    box-shadow: initial;
+}
+
+#mastiles {
+    width: 100vw;
+    overflow: hidden;
+}
