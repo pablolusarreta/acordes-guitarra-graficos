@@ -1,8 +1,8 @@
 version: 2.0.0
 files:
   - url: acordes-guitarra-Setup-2.0.0.exe
-    sha512: Nd4DouW5CJJIUO4ZGOuYvUB1dzjyxyunornorQeeXSOK91g3NFveIDlNV7nYir/83vjPh7V7qyVpXTJHBjUMxw==
-    size: 44482863
+    sha512: oC2qtZaEPgl+s9YBd44N8xnsBRL/st9TZAZvWwpH3QPEydw9k1u1Bc9gQ7bOzNC64CgUoCjYdvyWSBR8dLbHIw==
+    size: 44390902
 path: acordes-guitarra-Setup-2.0.0.exe
-sha512: Nd4DouW5CJJIUO4ZGOuYvUB1dzjyxyunornorQeeXSOK91g3NFveIDlNV7nYir/83vjPh7V7qyVpXTJHBjUMxw==
-releaseDate: '2023-02-15T09:30:29.732Z'
+sha512: oC2qtZaEPgl+s9YBd44N8xnsBRL/st9TZAZvWwpH3QPEydw9k1u1Bc9gQ7bOzNC64CgUoCjYdvyWSBR8dLbHIw==
+releaseDate: '2023-02-15T14:44:00.704Z'

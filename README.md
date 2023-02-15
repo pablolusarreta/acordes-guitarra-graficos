@@ -5,4 +5,7 @@ Aplicación de escritorio para windws programada con [![N|Solid](https://pablolu
 ### Pantalla de edición
 ![N|Solid](./img/app2.png)
 ### Marcas de mastil
+    Tres colores para diferenciar la importancia de las notas.
+    Cada click cambia en bucle los colores y los bordes en el traste 0.
+
 ![N|Solid](./img/app3.png)
