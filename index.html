@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Acordes graficos de Guitarra</title>
+    <title>Acordes graficos de guitarra</title>
 
     <script type="text/javascript" src="index.js"></script>
 
@@ -12,17 +12,16 @@
 </head>
 
 <body>
-
     <div id="mastiles"></div>
-
+  
     <input id="titulo_documento" type="text" value="" placeholder="Titulo descriptivo"
         onchange="guarda_titulo(this.value)" />
 
     <div id="fondo_listado">
-        <div>acordes y escalas</div>
+        <div id="titulo">acordes y escalas</div>
         <div id="listado"></div>
     </div>
-
+   
     <div id="menu">
         <div id="mas"></div>
         <div id="indice" onclick="inicio()" title="Listado de documentos"></div>
@@ -30,7 +29,6 @@
         <div id="impres" title="Imprimir"></div>        
         <div id="info" title="Información de la aplicación"></div>
         <div id="dev" ondblclick="ipcRenderer.send('dev', 1)"></div>
-
     </div>
 
     <div id="cortina">
@@ -41,7 +39,6 @@
             <button id="boton_guarda_tema" onclick="guardaJson(1);" title="GUARDA TEMA ACTUAL">Guarda Tema</button>
             <div onclick="this.parentNode.parentNode.style.display='none'">+</div>
         </div>
-
     </div>
 
 </body>

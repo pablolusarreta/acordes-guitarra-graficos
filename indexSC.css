@@ -188,22 +188,26 @@ div>table>tbody>tr>td>span {
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 25px 25px;
-    filter:invert(100%);
+    filter: invert(100%);
     transition: background-color 0.5s;
 }
 
 #mas {
     background-image: url("img/mas.png");
 }
+
 #indice {
     background-image: url("img/lista.png");
 }
+
 #conf {
     background-image: url("img/disquete.png");
 }
+
 #impres {
     background-image: url("img/impresora.png");
 }
+
 #info {
     background-image: url("img/interrogacion.png");
 }
@@ -269,10 +273,11 @@ div.T3 {
 
 #fondo_listado>div:nth-child(1) {
     position: absolute;
-    margin-left: 20%;
-    color: #999;
-    font-weight: 100;
-    font-size: 30px;
+    left: 20px;
+    top: -70px;
+    color: #bbb;
+    font-weight: 1000;
+    font-size: 110px;
 }
 
 #listado {
