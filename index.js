@@ -317,10 +317,7 @@ function formateaTS(t) {
     var tm = new Date(Number(t));
     return ((tm.getDate() < 10) ? '0' + tm.getDate() : tm.getDate()) + ' ' + (((tm.getMonth() + 1) < 10) ? '0' + (tm.getMonth() + 1) : (tm.getMonth() + 1)) + ' ' + tm.getFullYear() + '&nbsp;&nbsp;<span style="font-size:75%;">' + ((tm.getHours() < 10) ? '0' + tm.getHours() : tm.getHours()) + ' : ' + ((tm.getMinutes() < 10) ? '0' + tm.getMinutes() : tm.getMinutes()) + ' : ' + ((tm.getSeconds() < 10) ? '0' + tm.getSeconds() : tm.getSeconds()) + '</span>';
 }
-const informacion = ()  => {
-    window.open("https://github.com/pablolusarreta/acordes-guitarra-graficos", "Info", "width=1200, height=800")
-
- }
+const informacion = () => { ipcRenderer.send('info', 1) }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const electron = require('electron')
 window.onload = inicio
