@@ -1,11 +1,12 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
 //require('@electron/remote/main').initialize()
 const path = require('path')
+const dir = `file://${__dirname}/index.html`
 let win
-const createWindow = direccion => {
+const createWindow = (dir, dim) => {
   win = new BrowserWindow({
-    width: 1200,
-    height: 800,
+    width: dim[0],
+    height: dim[1],
     minWidth: 1100,
     minHeight: 600,
     backgroundColor: '#fff',
@@ -18,11 +19,11 @@ const createWindow = direccion => {
       contextIsolation: false
     }
   })
-  win.loadURL(direccion)
+  win.loadURL(dir)
   win.setMenu(null);
   win.on('closed', () => { win = null })
 }
-app.on('ready', () => { createWindow(`file://${__dirname}/index.html`) })
+app.on('ready', () => { createWindow(dir, [1200, 800]) })
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit()
@@ -30,7 +31,7 @@ app.on('window-all-closed', () => {
 });
 app.on('activate', () => {
   if (win === null) {
-    createWindow(`file://${__dirname}/index.html`)
+    createWindow(dir, [1200, 800])
   }
 });
 if (process.env.NODE_ENV !== 'production') {
@@ -39,4 +40,6 @@ if (process.env.NODE_ENV !== 'production') {
   })
 }
 ipcMain.on('dev', (event, arg) => { win.webContents.openDevTools() })
-ipcMain.on('info', (event, arg) => { createWindow("https://github.com/pablolusarreta/acordes-guitarra-graficos/blob/master/README.md") })
+ipcMain.on('info', (event, arg) => {
+  createWindow("https://github.com/pablolusarreta/acordes-guitarra-graficos/blob/master/README.md", [1170, 700])
+})
