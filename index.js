@@ -132,13 +132,15 @@ function inicio() {
             CIFRADOGUITARRA2 = JSON.parse(localStorage.getItem('CIFRADOGUITARRA2'));
             var S = '';
             for (var i = CIFRADOGUITARRA2.length - 1; i > -1; i--) {
-                S += '<div id="' + i + '"><span onclick="carga_documento(this.parentNode.id)">' + formateaTS(CIFRADOGUITARRA2[i].ID) + '</span>';
-                S += '<span onclick="carga_documento(this.parentNode.id)">' + CIFRADOGUITARRA2[i].titulo + '</span>';
-                S += '<div onclick="elimina_documento(this)">+</div>';
-                S += '<div><span>Trastes:&nbsp;&nbsp;&nbsp;&nbsp;</span><select onchange="establece_trastes(' + i + ',this.value);">';
+                S += `<div id="${i}">
+                    <span onclick="carga_documento(this.parentNode.id)">${formateaTS(CIFRADOGUITARRA2[i].ID)}</span>
+                    <span onclick="carga_documento(this.parentNode.id)">${CIFRADOGUITARRA2[i].titulo}</span>
+                    <div onclick="elimina_documento(this)">+</div>
+                    <div><span>Trastes:&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <select onchange="establece_trastes('${i}',this.value);">`
                 var trastes = (CIFRADOGUITARRA2[i].trastes) ? CIFRADOGUITARRA2[i].trastes : 12;
                 for (var j = 3; j < 25; j++) {
-                    S += '<option ' + ((j == trastes) ? 'selected' : '') + '>' + j + '</option>';
+                    S += `<option ${((j == trastes) ? 'selected' : '')}>${j}</option>`
                 }
                 S += '</select></div>';
                 S += '</div>';
@@ -150,6 +152,7 @@ function inicio() {
         document.getElementById('mas').title = 'Crear un documento nuevo';
         document.getElementById('mastiles').innerHTML = '';
         document.getElementById('boton_guarda_tema').style.display = 'none';
+        document.getElementById('impres').style.display = 'none';
         //anade_clase()
     } else {
         alerta('Tú navegador no admite el almacenamiento local');
@@ -174,6 +177,8 @@ function carga_documento(id) {
     document.getElementById('mas').onclick = function () { crea_mastil(true, CIFRADOGUITARRA2[doc_select].grafico.length); };
     document.getElementById('mas').title = 'Crear un mastil nuevo';
     document.getElementById('boton_guarda_tema').style.display = 'block';
+    document.getElementById('boton_guarda_tema').style.display = 'block';
+    document.getElementById('impres').style.display = 'block';
     for (var i in CIFRADOGUITARRA2[doc_select].grafico) {
         crea_mastil(false, Number(i));
     }
@@ -311,13 +316,38 @@ function pulsado(k, id, L, n) {
         }
     }
     //console.log(L+'0');
-    return L + '0';
+    return L + '0'
 }
 function formateaTS(t) {
     var tm = new Date(Number(t));
     return ((tm.getDate() < 10) ? '0' + tm.getDate() : tm.getDate()) + ' ' + (((tm.getMonth() + 1) < 10) ? '0' + (tm.getMonth() + 1) : (tm.getMonth() + 1)) + ' ' + tm.getFullYear() + '&nbsp;&nbsp;<span style="font-size:75%;">' + ((tm.getHours() < 10) ? '0' + tm.getHours() : tm.getHours()) + ' : ' + ((tm.getMinutes() < 10) ? '0' + tm.getMinutes() : tm.getMinutes()) + ' : ' + ((tm.getSeconds() < 10) ? '0' + tm.getSeconds() : tm.getSeconds()) + '</span>';
 }
 const informacion = () => { ipcRenderer.send('info', 1) }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const electron = require('electron')
+const BrowserWindow = electron.remote.BrowserWindow;
+var options = {
+    silent: false,
+    printBackground: true,
+    color: false,
+    margin: {
+        marginType: 'printableArea'
+    },
+    horizontal: true,
+    landscape: false,
+    pagesPerSheet: 1,
+    collate: false,
+    copies: 1,
+    header: 'Header of the Page',
+    footer: 'Footer of the Page'
+}
+const imprimir = () => {
+    //let win = BrowserWindow.getFocusedWindow();
+    let win = BrowserWindow.getAllWindows()[0];
+    win.webContents.print(options, (success, failureReason) => {
+        if (!success) console.log(failureReason);
+        location.reload()
+    });
+}/**/
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 window.onload = inicio
