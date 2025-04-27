@@ -154,6 +154,7 @@ function inicio() {
         document.getElementById('boton_guarda_tema').style.display = 'none';
         document.getElementById('impres').style.display = 'none';
         //anade_clase()
+        zoom()
     } else {
         alerta('Tú navegador no admite el almacenamiento local');
     }
@@ -182,6 +183,7 @@ function carga_documento(id) {
     for (var i in CIFRADOGUITARRA2[doc_select].grafico) {
         crea_mastil(false, Number(i));
     }
+    zoom()
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function guarda_pulsado(Ob) {
@@ -348,6 +350,17 @@ const imprimir = () => {
         location.reload()
     });
 }/**/
+function zoom() {
+    const v = 1230 * 1.2
+    let z = (document.body.clientWidth / v).toFixed(3)
+    console.log(z)
+    const parentElement = document.getElementById('mastiles')
+    const divElements = parentElement.querySelectorAll(':scope > div')
+    divElements.forEach(div => {
+        div.style.zoom = z;
+    });
+}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 window.onload = inicio
+window.onresize = zoom
